@@ -1,0 +1,99 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='stylesheets/game.css')
+    link(rel='stylesheet' href='stylesheets/chooseColor.css')
+    script(defer, src="js/gameFrontEnd.js" type="module")
+    title Home
+script(src='/socket.io/socket.io.js')
+.gameScreenContainer
+    .colorContainer
+    #discard.discard
+        a Discard Pile
+        .card.discardCard
+    .deck
+        a.reshuffleText Deck Empty
+        button.start-game START GAME
+        .deckContainer
+    .unoButtonContainer
+        button#unoButton(type="button") Uno!
+    .youDidNotSayUnoButtonContainer
+        button#youDidNotSayUnoButton(type="button") You didn't say Uno!
+    #myHandBorder.hand
+    #myHandContainer
+        #myHand.hand
+    #leftOpponentBorder
+    .leftOpponentContainer
+        #leftOpponentUnoSymbol Uno!
+        #leftOpponentName.opponentName
+        #leftOpponent
+    #topOpponentBorder
+    .topOpponentContainer
+        #topOpponentUnoSymbol Uno!
+        #topOpponentName.opponentName
+        #topOpponent
+    #rightOpponentBorder
+    .rightOpponentContainer
+        #rightOpponentUnoSymbol Uno!
+        #rightOpponentName.opponentName
+        #rightOpponent
+    .wildcardButtonContainer
+    #reverseContainer
+        #reverse
+    #skipContainer
+        #skip
+    #plusTwoContainer
+        #plusTwo
+    #plusFourContainer
+        #plusFour
+    .alertContainer
+    .container-chat
+        .accordion-content
+            .chat-field
+            br
+            .input-container
+            input#input-field-chat.input-field-chat(type='text')
+            button#input-button.input-button SEND
+            br
+            br
+        button.accordion CHAT
+        script(src='/scripts/chatbox.js')
+    button.leave-game LEAVE GAME
+    a.modal-open(href='#modal')
+    #modal.modal
+        .modal-content
+            a.modal-close(href='#' title='Close Modal') X
+            h1 Choose a Color
+            .modal-area
+                button#redbttn.choosebttn RED
+                button#bluebttn.choosebttn BLUE
+                button#yellowbttn.choosebttn YELLOW
+                button#greenbttn.choosebttn GREEN
+
+    a.winner-open(href='#winner')
+    #winner.winner
+        .winner-content
+            a.winner-close(href='#w' title='Close Winner') X
+            h1 GAME OVER
+            .winner-area 
+                img(src='/assets/winnerSmiley.png')
+                br
+                | Congratulations!
+                br
+                | YOU WIN
+                br
+                button.lobby-button Return to Lobby              
+    a.loser-open(href='#loser')
+    #loser.loser
+        .loser-content
+            a.loser-close(href='#l' title='Close Loser') X
+            h1 GAME OVER
+            .loser-area 
+                img(src='/assets/loserSmiley.png')
+                br
+                | Oh no!
+                br
+                | YOU LOST
+                br
+                button.lobby-button Return to Lobby
+    

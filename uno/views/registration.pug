@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet' href='stylesheets/style.css')
+  script(src='scripts/register.js')
+  title Home
+.unoHeader
+  span#header1 U
+  span#header2 N
+  span#header3 O
+#registration.bodyContainer
+  #bgBlur
+    form#registrationForm
+      #registrationHeaderContainer.formHeaderContainer
+        #lHeader
+          b Register
+      #inputContainer.regInput
+        input(type='text' placeholder='Enter Email' required='terms' name='email' id='email')
+        input(type='text' placeholder='Enter Username' required='terms' name='uname' id='username')
+
+        input(type='password' placeholder='Enter Password' required='terms' name='pword' id='password')
+        input(type='password' placeholder='Confirm Password' required='terms' name='pwordConfirm' id='confirm_pass')
+        button.loginButton(type='button' id="create" onclick = 'validate()') &gt;
